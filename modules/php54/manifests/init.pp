@@ -1,10 +1,11 @@
 class php54 {
 	file { "/etc/apt/sources.list":
 		ensure => file,
-		owner => root,
-		group => root,
-		source => "puppet:///modules/php54/sources.list",
+		owner  => root,
+		group  => root,
+		source => "puppet:///modules/php54/squeeze.sources.list",
 	}
+
 	exec { "import-gpg":
 		command => "/usr/bin/wget -q http://www.dotdeb.org/dotdeb.gpg -O -| /usr/bin/apt-key add -"
 	}
@@ -17,6 +18,6 @@ class php54 {
 		"php5"
 	] :
 		ensure => latest,
-		require => Exec["/usr/bin/apt-get update"]
+		require => Exec["/usr/bin/apt-get update"],
 	}
 }
