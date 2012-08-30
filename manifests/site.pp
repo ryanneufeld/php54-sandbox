@@ -1,5 +1,6 @@
 group { "puppet":
-	ensure => present
+	ensure => present,
 }
+class { 'apt': }
 include apache
 include php54
