@@ -1,6 +1,8 @@
 group { "puppet":
 	ensure => present,
 }
-class { 'apt': }
+class { 'apt':
+	disable_keys      => false,
+}
 include apache
 include php54

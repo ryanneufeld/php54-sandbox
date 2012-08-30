@@ -1,4 +1,6 @@
 class apache {
+  include apt::update
+
   package { "apache2":
     ensure => present,
   }

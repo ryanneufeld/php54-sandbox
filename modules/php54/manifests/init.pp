@@ -1,19 +1,27 @@
 class php54 {
-	apt::source {'php54_dotdeb':
-		location    =>"http://packages.dotdeb.org/",
-		release     => "squeeze-php54",
-		repos       => "all",
-		include_src => false,
-	}
+  case $operatingsystem {
+    debian: {
+      notify { 'This is a Debian system':}
+      apt::source {'php54_dotdeb':
+      	ensure      => present,
+        location    => "http://packages.dotdeb.org/",
+        release     => "squeeze-php54",
+        repos       => "all",
+        include_src => false,
+        key         => '3D624A3B',
+        key_source  => "http://www.dotdeb.org/dotdeb.gpg"
+      }
+    }
+    ubuntu: {
+      notify {'This is an Ubuntu system':}
+      apt::ppa { "ppa:ondrej/php5": }
+    }
 
-	exec { "import-gpg":
-		command => "/usr/bin/wget -q http://www.dotdeb.org/dotdeb.gpg -O -| /usr/bin/apt-key add -"
-	}
+    default: { fail("Unrecognized operating system for webserver")}
+  }
 
-	package { [
-		"php5"
-	] :
-		ensure => latest,
-		require => Exec["apt_update"],
-	}
+  package { ["php5"] :
+    ensure  => latest,
+    require => [Apt::Source['php54_dotdeb']],
+  }
 }

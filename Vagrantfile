@@ -7,10 +7,10 @@ Vagrant::Config.run do |config|
   config.vm.share_folder "www", "/var/www", "./www"
 
   # install puppet's requirements, otherwise it breaks on makeing a mysql password
-  config.vm.provision :shell, :path => "bin/require-before-puppet.sh"
+  #config.vm.provision :shell, :path => "bin/require-before-puppet.sh"
 
   # install puppet, otherwise it breaks on the sqlite module's metadata
-  config.vm.provision :shell, :path => "bin/update-puppet.sh"
+  #config.vm.provision :shell, :path => "bin/update-puppet.sh"
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
