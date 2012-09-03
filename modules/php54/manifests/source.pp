@@ -4,7 +4,7 @@ class php54::source {
       apt::source {'php54_dotdeb':
         ensure      => present,
         location    => "http://packages.dotdeb.org/",
-        release     => "squeeze-php54",
+        release     => "${lsbdistcodename}-php54",
         repos       => "all",
         include_src => false,
         key         => "3D624A3B",

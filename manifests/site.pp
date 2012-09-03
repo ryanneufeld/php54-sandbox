@@ -4,5 +4,7 @@ group { "puppet":
 class { 'apt':
 	disable_keys      => false,
 }
-include apache
-include php54
+
+class { 'apache': }
+class { 'php54' : }
+
