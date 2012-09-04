@@ -3,7 +3,6 @@ class php54 {
 
   package {[
   	  "php5",
-  	  "php5-mysql",
   	  "php5-mysqlnd",
   	  "php5-mcrypt",
   	  "php5-gd",

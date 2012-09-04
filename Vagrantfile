@@ -2,7 +2,7 @@ Vagrant::Config.run do |config|
   config.vm.box = "squeeze64"
   config.vm.host_name = "php54"
   # taken from vagrantbox.es
-  config.vm.box_url = "http://puppetlabs.s3.amazonaws.com/pub/Squeeze64.box"
+  config.vm.box_url = "http://dl.dropbox.com/u/937870/VMs/squeeze64.box"
   config.vm.network :hostonly, "33.33.33.10"
   config.vm.share_folder "www", "/var/www", "./www"
 
