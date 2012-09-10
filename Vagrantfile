@@ -3,7 +3,8 @@ Vagrant::Config.run do |config|
   config.vm.host_name = "php54"
   # taken from vagrantbox.es
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  config.vm.network :bridged
+  config.vm.network :hostonly, "33.33.33.10"
+  config.vm.network :bridged, "192.168.1.55"
   config.vm.share_folder "www", "/var/www", "./www"
 
   # install puppet's requirements, otherwise it breaks on makeing a mysql password
@@ -16,5 +17,5 @@ Vagrant::Config.run do |config|
     puppet.manifests_path = "manifests"
     puppet.module_path    = "modules"
     puppet.manifest_file  = "site.pp"
-  end
+  end 
 end
