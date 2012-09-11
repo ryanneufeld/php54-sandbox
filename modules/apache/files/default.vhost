@@ -1,6 +1,6 @@
 <VirtualHost *:80>
-	ServerAdmin webmaster@localhost
-	ServerName  dev.localhost
+	ServerAdmin annett@metrolyrics.com
+	ServerName  annett.metrolyrics.com
 
 	DocumentRoot /var/www
 	<Directory />
@@ -8,6 +8,31 @@
 		AllowOverride None
 	</Directory>
 	<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+	ServerAdmin annett@metrolyrics.com
+	ServerName  m.annett.metrolyrics.com
+
+	DocumentRoot /var/www/mobile
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/mobile/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
 		Order allow,deny
