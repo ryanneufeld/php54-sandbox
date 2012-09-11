@@ -1,9 +1,11 @@
 Vagrant::Config.run do |config|
   config.vm.box = "precise64"
-  config.vm.host_name = "php54"
+  config.vm.host_name = "test.metrolyrics.com"
   # taken from vagrantbox.es
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  config.vm.network :bridged
+  config.vm.network :bridged, :bridge => 'en0: Ethernet', :mac => '080027df37ce'
+  config.vm.network :hostonly, "33.33.33.10"
+
   config.vm.share_folder "www", "/var/www", "./www"
 
   # install puppet's requirements, otherwise it breaks on makeing a mysql password
