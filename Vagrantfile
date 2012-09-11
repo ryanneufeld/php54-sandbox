@@ -1,6 +1,6 @@
 Vagrant::Config.run do |config|
   config.vm.box = "precise64"
-  config.vm.host_name = "test.metrolyrics.com"
+  config.vm.host_name = "annett.metrolyrics.com"
   # taken from vagrantbox.es
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
   config.vm.network :bridged, :bridge => 'en0: Ethernet', :mac => '08002741e9d1'
