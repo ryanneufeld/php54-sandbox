@@ -3,7 +3,7 @@ Vagrant::Config.run do |config|
   config.vm.host_name = "annett.metrolyrics.com"
   # taken from vagrantbox.es
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  config.vm.network :bridged, :bridge => 'en0: Ethernet', :mac => '08002741e9d1'
+  config.vm.network :bridged, :bridge => 'en0: Ethernet 1', :mac => '08002741e9d1'
   config.vm.network :hostonly, "33.33.33.10"
   config.vm.share_folder "www", "/var/www", "./www"
 
