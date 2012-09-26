@@ -12,7 +12,6 @@ class php54 {
   	  "php5-gd",
   	  "libphp-phpmailer",
   	  "php-gettext",
-  	  "git",         # TODO move this to it's own thing.
   	] :
     ensure  => latest,
     require => [Class['php54::source']],

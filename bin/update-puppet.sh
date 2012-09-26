@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 # cd /tmp
 # PPREL=puppetlabs-release
@@ -26,7 +26,7 @@ set -e
 # sudo dpkg -i $PPDEB
 
 # # update to latest puppet
-# sudo apt-get update
+sudo apt-get update
 
 # update puppet install
 # update facter to make sure the osfamily value is set properly

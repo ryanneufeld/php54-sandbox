@@ -5,4 +5,11 @@ class metrolyrics {
       source => "puppet:///modules/metrolyrics/ml_environment.php",
       require => Class['php54'],
   }
+  package{[
+  	  "git",
+      "nfs-kernel-server",
+  ]:
+    ensure  => latest,
+  }
+
 }
