@@ -7,7 +7,7 @@ Vagrant::Config.run do |config|
   config.vm.network :hostonly, "33.33.33.10"
 
   # install puppet, otherwise it breaks on the sqlite module's metadata
-  config.vm.provision :shell, :path => "bin/update-puppet.sh"
+  #config.vm.provision :shell, :path => "bin/update-puppet.sh"
 
   config.vm.share_folder "www", "/var/www", "./www"
 
