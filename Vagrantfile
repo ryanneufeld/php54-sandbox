@@ -9,7 +9,7 @@ Vagrant::Config.run do |config|
   # install puppet, otherwise it breaks on the sqlite module's metadata
   config.vm.provision :shell, :path => "bin/update-puppet.sh"
 
-  config.vm.share_folder "www", "/var/www", "./www", :nfs => true
+  config.vm.share_folder "www", "/var/www", "./www"
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
