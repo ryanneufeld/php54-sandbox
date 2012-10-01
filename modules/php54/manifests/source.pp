@@ -12,13 +12,13 @@ class php54::source {
       }
       package{"locales-all":
         ensure => latest,
-      } # TODO move this to it's own thing.
+      }
     }
     ubuntu: {
       apt::ppa { "ppa:ondrej/php5": }
       package{"locales":
         ensure => latest,
-      } # TODO move this to it's own thing.
+      }
     }
 
     default: { fail("Unrecognized operating system for webserver")}

@@ -1,4 +1,5 @@
 Vagrant::Config.run do |config|
+
   config.vm.box = "precise64"
   config.vm.host_name = "ryan"
   # taken from vagrantbox.es

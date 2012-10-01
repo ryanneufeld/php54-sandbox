@@ -12,6 +12,8 @@ class php54 {
   	  "php5-gd",
   	  "libphp-phpmailer",
   	  "php-gettext",
+      "php-pear",
+      "php5-dev",
   	] :
     ensure  => latest,
     require => [Class['php54::source']],
