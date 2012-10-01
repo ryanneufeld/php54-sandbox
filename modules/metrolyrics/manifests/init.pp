@@ -1,5 +1,4 @@
 class metrolyrics {
-  include metrolyrics::phpconfig
 
   file {
       "/usr/share/php/ml_environment.php" :
@@ -26,7 +25,11 @@ class metrolyrics {
   apache::mod {"cache":}
   apache::mod {"expires":}
   apache::mod {"actions":}
-  class {'apache::mod::php': }
+  include apache::mod::php
+  include metrolyrics::phpconfig
+
+  Class["php54"] -> Class["Apache::Mod::Php"] -> Class["metrolyrics::phpconfig"]
+
 
   # apache::vhost { 'm.ryan.metrolyrics.com':
   #   ssl => false,
