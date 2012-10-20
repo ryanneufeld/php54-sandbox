@@ -1,11 +1,14 @@
 group { "puppet":
 	ensure => present,
 }
-class { 'apt':
-	disable_keys      => false,
-}
-
+class { 'apt': }
 class { 'apache': }
 class { 'php54' : }
-class { 'metrolyrics' : }
+class { 'devsite' : }
+package{[
+    "git",
+    "subversion",
+  ]:
+  ensure  => present,
+}
 
