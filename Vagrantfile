@@ -13,7 +13,7 @@ Vagrant::Config.run do |config|
 
   config.vm.share_folder "www", "/var/www", "./www"
 
-  config.vm.provision :shell, :path => 'bin/upgrade-system.sh'
+  config.vm.provision :shell, :path => 'bin/apt-update.sh'
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
