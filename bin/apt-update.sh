@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if test -f /var/lock/apt-update-once; then
+if test -f /etc/apt-update-once; then
 	exit;
 fi
 
 sudo apt-get update
 
-touch /var/lock/apt-update-once
+sudo touch /etc/apt-update-once
 # sudo apt-get -yq upgrade

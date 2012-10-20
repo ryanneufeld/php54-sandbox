@@ -3,9 +3,11 @@ Vagrant::Config.run do |config|
   # config.vm.boot_mode = 'gui'
 
   config.vm.box = "precise64"
-  config.vm.host_name = "ryan"
   # taken from vagrantbox.es
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+
+  config.vm.host_name = "ryan"
   config.vm.network :hostonly, "33.33.33.10"
 
   # install puppet, otherwise it breaks on the sqlite module's metadata
