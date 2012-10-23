@@ -1,5 +1,5 @@
 class devsite {
-  apache::vhost { 'test.localdomain':
+  apache::vhost { 'default':
     ssl                => false,
     options            => 'All',
     override           => 'All',
